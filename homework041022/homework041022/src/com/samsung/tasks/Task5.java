@@ -1,17 +1,16 @@
-package com.samsung;
+package com.samsung.tasks;
 
 import java.util.Scanner;
 
-public class Task6 {
+public class Task5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         int a = scanner.nextInt();
         int b = scanner.nextInt();
         int c = scanner.nextInt();
+        int d = scanner.nextInt();
 
-        boolean res = ((a % 2 == 0 && b % 2 == 0) || (a % 2 == 0 && c % 2 == 0) || (b % 2 == 0 && c % 2 == 0));
+        boolean res = ((b == -a || b == -c || b == -d) || (a == -b || a == -c || a == -d) || (c == -b || c == -a || c == -d) || (d == -b || d == -a || d == -c));
         System.out.println(res);
-
     }
 }

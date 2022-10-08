@@ -1,4 +1,4 @@
-package com.samsung;
+package com.samsung.tasks;
 
 import java.util.Scanner;
 
