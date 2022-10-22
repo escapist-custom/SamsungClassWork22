@@ -11,12 +11,17 @@ public class NumberDigits {
     public static int sumOfThirteen (int number) {
         int sum = 0;
         int ins_sum = 0;
-
+        int num = 0;
         for (int i = 0; i < number; i++) {
-            for (int j = i; j < )
-                if (i % 10 + i / 10 == 13) {
-                    sum++;
-                }
+            int j = i;
+            while (j >= 1) {
+                j /= 10;
+                ins_sum += j;
+            }
+            if (ins_sum == 13) {
+                sum++;
+            }
+            ins_sum = 0;
         }
         return sum;
     }
