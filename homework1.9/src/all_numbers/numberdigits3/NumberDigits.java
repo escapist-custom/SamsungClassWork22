@@ -1,4 +1,4 @@
-package comsamsung.numberdigits3;
+package all_numbers.numberdigits3;
 
 import java.util.Scanner;
 

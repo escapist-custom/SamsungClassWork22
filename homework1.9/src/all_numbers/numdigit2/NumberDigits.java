@@ -1,4 +1,4 @@
-package numdigit2;
+package all_numbers.numdigit2;
 
 import java.util.Scanner;
 

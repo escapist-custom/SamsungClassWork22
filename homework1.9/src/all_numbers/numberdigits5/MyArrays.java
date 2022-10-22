@@ -1,4 +1,4 @@
-package numberdigits5;
+package all_numbers.numberdigits5;
 
 import java.util.Scanner;
 

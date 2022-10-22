@@ -1,4 +1,4 @@
-package NumberDigits4;
+package all_numbers.NumberDigits4;
 
 import java.util.Scanner;
 
