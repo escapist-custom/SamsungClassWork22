@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">homework2.7.2</string>
+    <string name="reg">Registration</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="enter">Enter</string>
+</resources>
