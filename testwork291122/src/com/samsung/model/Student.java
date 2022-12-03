@@ -1,7 +1,7 @@
 package com.samsung.model;
 
 public class Student extends User implements Printer{
-    protected String group;
+    private String group;
     public Student(String name, String second_name, String father_name, String phone, String group) {
         this.name = name;
         this.second_name = second_name;

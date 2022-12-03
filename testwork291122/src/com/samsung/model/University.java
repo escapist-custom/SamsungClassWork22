@@ -3,10 +3,10 @@ package com.samsung.model;
 import javax.sound.midi.Soundbank;
 
 public class University implements Printer{
-    protected String address;
-    protected String name;
-    protected Student[] students;
-    protected Teacher[] teachers;
+    private String address;
+    private String name;
+    private Student[] students;
+    private Teacher[] teachers;
 
     public University(String name, String address, Student[] students, Teacher[] teachers) {
         this.name = name;

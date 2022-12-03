@@ -1,7 +1,7 @@
 package com.samsung.model;
 
 public class Teacher extends User implements Printer{
-    protected String[] subjects;
+    private String[] subjects;
 
     public Teacher(String name, String second_name, String father_name, String phone, String[] subjects) {
         this.name = name;
