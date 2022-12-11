@@ -1,25 +1,34 @@
 package com.samsung.model;
 
 public class Teacher extends User implements Printer{
-    private String[] subjects;
+    protected String[] subjects;
 
     public Teacher(String name, String second_name, String father_name, String phone, String[] subjects) {
         this.name = name;
         this.second_name = second_name;
         this.father_name = father_name;
         this.phone = phone;
-        this.subjects = subjects;
+        this.subjects = new String[subjects.length];
+        for (int i = 0; i < this.subjects.length; i++) {
+            this.subjects[i] = subjects[i];
+        }
     }
 
     public Teacher(String name, String second_name, String father_name, String[] subjects) {
         this.name = name;
         this.second_name = second_name;
         this.father_name = father_name;
-        this.subjects = subjects;
+        this.subjects = new String[subjects.length];
+        for (int i = 0; i < this.subjects.length; i++) {
+            this.subjects[i] = subjects[i]; 
+        }
     }
 
     public Teacher(Teacher teacher) {
-        super();
+        this.subjects = new String[teacher.subjects.length];
+        for (int i = 0; i < subjects.length; i++) {
+            this.subjects[i] = teacher.subjects[i];
+        }
     }
 
     //------------------

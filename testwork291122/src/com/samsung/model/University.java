@@ -1,18 +1,22 @@
 package com.samsung.model;
 
-import javax.sound.midi.Soundbank;
-
 public class University implements Printer{
-    private String address;
-    private String name;
-    private Student[] students;
-    private Teacher[] teachers;
+    protected String address;
+    protected String name;
+    protected Student[] students;
+    protected Teacher[] teachers;
 
     public University(String name, String address, Student[] students, Teacher[] teachers) {
         this.name = name;
         this.address = address;
-        this.students = students;
-        this.teachers = teachers;
+        this.students = new Student[students.length];
+        for (int i = 0; i < this.students.length; i++) {
+            this.students[i] = students[i];
+        }
+        this.teachers = new Teacher[teachers.length];
+        for (int i = 0; i < this.teachers.length; i++) {
+            this.teachers[i] = teachers[i];
+        }
     }
     @Override
     public void printInfoToConsoleSuperKpacuBo() {

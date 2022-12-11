@@ -1,14 +1,12 @@
 package com.samsung.model;
 
 public abstract class User {
-    private String name;
-    private String second_name;
-    private String father_name;
-    private String phone;
+    protected String name;
+    protected String second_name;
+    protected String father_name;
+    protected String phone;
 
-    public void sayHello() {
-        System.out.println("Hello world!");
-    };
+    public void sayHello() {};
 
     //--------------------------------
     // Getters
