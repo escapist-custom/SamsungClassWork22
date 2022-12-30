@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">test_android271222</string>
+    <string name="name_prod">Название продукта</string>
+    <string name="dateIn">Дата поступления</string>
+    <string name="amount">Количество</string>
+    <string name="priceForOne">Стоимость за единицу</string>
+    <string name="addProduct">Добавить продукт</string>
+    <string name="srcPrdc">Поиск продукта</string>
+    <string name="enterNameProd">Введите название продукта</string>
+    <string name="findProd">Найти продукт</string>
+    <string name="infoProd">Информация о продукте</string>
+    <string name="PRODUCT">PRODUCT</string>
+</resources>
