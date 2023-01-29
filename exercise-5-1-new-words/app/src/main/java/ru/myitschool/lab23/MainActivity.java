@@ -28,6 +28,7 @@ import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -39,12 +40,13 @@ public class MainActivity extends AppCompatActivity {
     private View writeExternal;
     private TextView fileContent;
     private EditText wordsInput;
-    private Calendar month = new GregorianCalendar();
+
     private File filesDirectory;
 
     // Classical types of data
-    private String[] words = new String[10000];
-
+    private int month;
+    private Context context;
+    private String words;
     private static final String MY_TAG = "MY_TAG";
 
     @Override
@@ -56,45 +58,32 @@ public class MainActivity extends AppCompatActivity {
         writeExternal = findViewById(R.id.write_external);
         fileContent = findViewById(R.id.file_content);
         wordsInput = findViewById(R.id.words_input);
+        context = getApplicationContext();
+
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        month = cal.get(Calendar.MONTH) + 1;
+
 
         writeInternal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                creatingFolder();
-                try {
-                    copingFile();
-                } catch (FileNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
+                writeToFile();
             }
         });
     }
 
-    private void creatingFolder() {
-        try {
-            filesDirectory = new File("files/" + month.get(Calendar.MONTH) + "/words.txt");
-            filesDirectory.mkdir();
-        } catch (NullPointerException e) {
-            Log.e(MY_TAG, e.getMessage());
-        }
-    }
+    public void writeToFile() {
+        words = wordsInput.getText().toString().replace(",", "\n");
+        File path = new File(getApplicationContext().getFilesDir() + "/" + month);
 
-    public void copingFile() throws FileNotFoundException {
-        words = wordsInput.getText().toString().split(",");
-        Context context = getApplicationContext();
-
-        File filePath = new File(context.getFilesDir().getPath() + "/" + month.get(Calendar.MONTH) + "/words.txt");
-        Log.i(MY_TAG, context.getFilesDir().getPath());
         try {
-            filePath.createNewFile();
-            PrintWriter pw = new PrintWriter(new FileWriter(filePath));
-            for (int i = 0; i < words.length; i++) {
-                pw.print(words[i] + "\n");
-            }
-        } catch (FileNotFoundException e) {
+            FileOutputStream writer = new FileOutputStream(new File(path, "/words.txt"));
+            writer.write(words.getBytes());
+            writer.close();
+        } catch (Exception e) {
             Log.e(MY_TAG, e.getMessage());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 }
